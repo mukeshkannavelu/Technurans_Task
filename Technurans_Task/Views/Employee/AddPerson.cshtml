@@ -1,0 +1,38 @@
+﻿@model Technurans_Task.Models.Domain.Task
+@{
+   // Layout = "_Layout";
+}
+<div class="mt-2" style="width:50%">
+<form asp-action="AddPerson">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" type="text" class="form-control">
+            <span class="text-danger" asp-validation-for="Name"></span>
+
+        </div>
+    <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <input asp-for="Description" type="text" class="form-control">
+            <span class="text-danger" asp-validation-for="Description"></span>
+       
+    </div>
+        <div class="mb-3">
+            <label asp-for="Role" class="form-label">Role</label>
+            <input asp-for="Role" type="text" class="form-control">
+            <span class="text-danger" asp-validation-for="Role"></span>
+
+        </div>
+
+
+ 
+        @if (TempData["msg"] != null)
+        {
+            <div class="mb-3">
+                @TempData["msg"]
+            </div>
+        }
+
+    <button type="submit" class="btn btn-primary">submit</button>
+    <a href="~/Employee/DisplayPersons" class="bln btn-primary">AllPersons</a>
+</form>
+</div>
